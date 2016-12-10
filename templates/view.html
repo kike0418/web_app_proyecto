@@ -1,0 +1,39 @@
+$def with (post)
+
+<html>
+   <title> 
+   </title>
+   <head>
+       <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" contetn="IE=edge">
+	    <meta name="viewport" content="width=device-width, user.scalable=no, initial-scale=1.0, maximum-scale=1.0, minium-scale=1.0">
+        <title>Inicio de sesion</title>
+        <link rel="stylesheet" href="../static/css/bootstrap.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+   </head>
+<body>
+   <header>
+		    <div class="container">
+            <h3>Detalle de reporte</h3>
+            <a href="/bd"><h5>Regresar</h5></a>
+       </div>
+    </header>
+
+<div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover ">
+                <tr class="active info">
+                    <th>ID Reporte</th>
+                    <th>Marca del dispositivo</th>
+                    <th>Modelo del dispositivo</th>
+                    <th>Tiempo Transcurrido del reporte</th>                    
+                </tr>
+                <tr>
+                    <td style="width:300px ">$post.id_reporte</td>
+                    <td style="width:300px ">$post.marca_disposito</td>
+                    <td style="width:300px ">$post.modelo_dispositivo</td>
+                    <td style="width:300px ">$datestr(post.tiempo_dereporte)</td>
+                </tr>
+
+<br/>
+
+

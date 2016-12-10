@@ -1,0 +1,53 @@
+$def with(form, temp)
+<html>
+   <title> 
+   </title>
+   <head>
+       <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" contetn="IE=edge">
+	    <meta name="viewport" content="width=device-width, user.scalable=no, initial-scale=1.0, maximum-scale=1.0, minium-scale=1.0">
+        <title>Proyecto</title>
+        <link rel="stylesheet" href="../static/css/bootstrap.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+   </head>
+    <body>
+    <header>
+		    <div class="container">
+			    <h1>Analisis de datos</h1>
+			 <a href="/"><h3>Inicio</h3></a>   
+			 <a href="mapa.html"><h3>Ubicaciones de tiendas de la CNDH en México</h3></a>
+		    </div>
+    </header>
+    <br>
+    <form name="main" method="post"> 
+    $if not form.valid: <p class="error">Resultados</p>
+    $:form.render()
+    <input class="btn btn-success" type="submit" />    </form>
+<div class="container">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover ">
+                <tr class="active info">
+                    <th>Estado</th>
+                    <th>Municipio</th>
+                    <th>Nombre de la tienda</th>
+                    <th>Almacen</th>
+                    <th>Municipio Indigena</th>
+                    <th>Unidad Operativa</th>
+                    
+                    
+                </tr>
+                $for row in temp:
+                    <tr>
+                        <td style="width:300px ">$row[5]</td>
+                        <td style="width:300px ">$row[6]</td>
+                        <td style="width:100px ">$row[4]</td>
+                        <td style="width:200px ">$row[2]</td>
+                        <td style="width:200px ">$row[10]</td>
+                        <td style="width:300px ">$row[1]</td>
+                        
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+$def with (post, form)
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" contetn="IE=edge">
+	    <meta name="viewport" content="width=device-width, user.scalable=no, initial-scale=1.0, maximum-scale=1.0, minium-scale=1.0">
+        <title>Proyecto</title>
+        <link rel="stylesheet" href="../static/css/bootstrap.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+<body>
+<header>
+    <div class="container">
+       <h1>Editar información</h1>
+    </div>
+</header>
+    <br>
+    <form action="" method="post">
+    <div class="form-group">
+    $:form.render_css()
+    </div>
+</form>
+
+
+<h2>Eliminar Registro</h2>
+<form action="/delete/$post.id_reporte" method="post">
+    <input class="btn btn-danger" type="submit" value="Eliminar"/>
+</form>

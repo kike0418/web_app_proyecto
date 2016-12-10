@@ -1,0 +1,61 @@
+$def with(form,posts,username=None)
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" contetn="IE=edge">
+	    <meta name="viewport" content="width=device-width, user.scalable=no, initial-scale=1.0, maximum-scale=1.0, minium-scale=1.0">
+        <title>Proyecto</title>
+        <link rel="stylesheet" href="../static/css/bootstrap.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+<body>
+<header>
+    <div class="container">
+       <h1>Reporte de Robo o Extravio de Celulares</h1>
+    </div>
+</header>
+   <div style="margin: 20px;">
+    $if username is not None:
+       <h4>Bienvenido <b>$username</b><br/></h4>
+        <a href="logout">Cerrar Sesión</a>
+        <a href="/new"><h3>Nuevo registro</h3></a>
+        <br>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover ">
+                <tr class="active info">
+                    <th>ID Reporte</th>
+                    <th>Marca del dispositivo</th>
+                    <th>Modelo del dispositivo</th>
+                    <th>Descripcion</th>
+                    <th>Tiempo Transcurrido del reporte</th>
+                    <th>Opciones</th>
+                    
+                </tr>
+         $for post in posts:
+                <tr>
+                <td style="width:300px "><a href="/view/$post.id_reporte">$post.id_reporte</a> </td>
+                <td style="width:300px "><a href="/view/$post.id_reporte">$post.marca_disposito</td>
+                <td style="width:300px "><a href="/view/$post.id_reporte">$post.modelo_dispositivo</td>
+                <td style="width:300px "><a href="/view/$post.id_reporte">$post.descripcion</td>
+                <td style="width:300px ">Hace $datestr(post.tiempo_dereporte)</td>
+                <td style="width:300px "><a href="/edit/$post.id_reporte">Edit</a></td>
+                
+                </tr>
+            </table>
+        </div>
+    $else:
+        <a href="/"><h3>Inicio</h3></a>   
+        <h4>Iniciar sesión</h4>
+        <form method="post" name="login" class="col-xs-4">
+        <div class="form-group">
+        Usuario: <input name="username" type="text" class="form-control" /><br />
+        Contraseña: <input name="password" type="password" class="form-control"/><br />
+        </div>
+        <input class="btn btn-success" type="submit" value="Ingresar"/> 
+        <a href="signup">Registrarme</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

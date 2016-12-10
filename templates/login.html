@@ -1,0 +1,36 @@
+$def with(form,username=None)
+<html>
+   <title> 
+   </title>
+   <head>
+       <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" contetn="IE=edge">
+	    <meta name="viewport" content="width=device-width, user.scalable=no, initial-scale=1.0, maximum-scale=1.0, minium-scale=1.0">
+        <title>Inicio de sesion</title>
+        <link rel="stylesheet" href="../static/css/bootstrap.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+   </head>
+<body>
+   <header>
+		    <div class="container">
+			    <h1>Inicio de sesion</h1>
+       </div>
+    </header>
+    <div style="margin: 20px;">
+    $if username is not None:
+        Has iniciado sesión como <b>$username</b><br />
+        <a href="logout">Salir</a>
+    $else:
+        <h4>Iniciar sesión</h4>
+            <form method="post" name="login" class="col-xs-4">
+               <div class="form-group">
+                Usuario: <input name="username" type="text" class="form-control" /><br />
+                Contraseña: <input name="password" type="password" class="form-control"/><br />
+                </div>
+                <input class="btn btn-success" type="submit" value="Ingresar"/> 
+                <a href="signup">Registrarme</a>
+            </form>
+        
+    </div>
+</body>
+</html>
