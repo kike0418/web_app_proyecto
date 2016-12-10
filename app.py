@@ -40,7 +40,7 @@ class index:
 class analisis:
     
     data = []
-    with open("data/dataCNCH.csv", "r") as file_open:
+    with open("data/DataCNCH.csv", "r") as file_open:
         dat = csv.reader(file_open, delimiter=",")
         for row in dat:
             data.append(row)
